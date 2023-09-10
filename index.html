@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/92123be90a.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Tululu</title>
+  </head>
+  <body>
+    <header>
+      <h1>Tululu</h1>
+      <div class="logo">
+        <!-- <img src="./img/IMG_1089 2.PNG" alt="logo" /> -->
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="title"><h3>Encryption</h3></div>
+        <select name="function" id="function">
+          <option hidden>Choose an action</option>
+          <option value="encrypt">Encrypt</option>
+          <option value="decrypt">Decrypt</option>
+        </select>
+
+        <div class="textContainer">
+          <section>
+            <div class="wrapper">
+              <div class="textArea">
+                <textarea
+                  name="textIn"
+                  id="textIn"
+                  cols="30"
+                  rows="10"
+                  placeholder="Text to encrypt"
+                ></textarea>
+              </div>
+              <div class="btns">
+                <button>paste</button>
+                <button>clear</button>
+              </div>
+              <button>encrypt</button>
+            </div>
+          </section>
+
+          <section>
+            <div class="wrapper">
+              <div class="textArea">
+                <textarea
+                  name="textOut"
+                  id="textOut"
+                  cols="30"
+                  rows="10"
+                  placeholder="Encrypted text"
+                  readonly
+                ></textarea>
+              </div>
+              <div class="btns">
+                <button>copy</button>
+                <button>clear</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="row Social">
+        <p>&#128075;</p>
+        <a href="#">Portfolio</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+      </div>
+      <div class="row Copyright">
+        <i class="fa-regular fa-copyright"></i> 2023 design by Yeika Robles |
+        All rights reserved
+      </div>
+    </footer>
+  </body>
+</html>
