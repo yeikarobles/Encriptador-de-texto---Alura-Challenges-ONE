@@ -7,19 +7,26 @@
       src="https://kit.fontawesome.com/92123be90a.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Farsan&family=Fredericka+the+Great&family=Patrick+Hand+SC&family=Suez+One&display=swap"
+      rel="stylesheet"
+    />
     <title>Tululu</title>
   </head>
   <body>
     <header>
-      <h1>Tululu</h1>
+      <h1>Tululú</h1>
       <div class="logo">
-        <!-- <img src="./img/IMG_1089 2.PNG" alt="logo" /> -->
+        <img src="./img/IMG_1089 2.PNG" alt="logo" />
       </div>
     </header>
     <main>
       <div class="container">
-        <div class="title"><h3>Encryption</h3></div>
-        <select name="function" id="function">
+        <div class="title"><h1>.Encryption</h1></div>
+        <select name="function" id="selected">
           <option hidden>Choose an action</option>
           <option value="encrypt">Encrypt</option>
           <option value="decrypt">Decrypt</option>
@@ -28,15 +35,14 @@
         <div class="textContainer">
           <section>
             <div class="wrapper">
-              <div class="textArea">
-                <textarea
-                  name="textIn"
-                  id="textIn"
-                  cols="30"
-                  rows="10"
-                  placeholder="Text to encrypt"
-                ></textarea>
-              </div>
+              <textarea
+                name="textIn"
+                id="textIn"
+                cols="30"
+                rows="10"
+                placeholder="text to encrypt"
+              ></textarea>
+
               <div class="btns">
                 <button>paste</button>
                 <button>clear</button>
@@ -47,16 +53,15 @@
 
           <section>
             <div class="wrapper">
-              <div class="textArea">
-                <textarea
-                  name="textOut"
-                  id="textOut"
-                  cols="30"
-                  rows="10"
-                  placeholder="Encrypted text"
-                  readonly
-                ></textarea>
-              </div>
+              <textarea
+                name="textOut"
+                id="textOut"
+                cols="30"
+                rows="10"
+                placeholder="encrypted text"
+                readonly
+              ></textarea>
+
               <div class="btns">
                 <button>copy</button>
                 <button>clear</button>
@@ -68,10 +73,27 @@
     </main>
     <footer>
       <div class="row Social">
-        <p>&#128075;</p>
-        <a href="#">Portfolio</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <i class="fa-solid fa-hashtag"></i>
+        <i class="fa-solid fa-less-than"></i>
+
+        <div class="socialLinks">
+          <span class="tooltip">
+            <a href="#">Portfolio</a>
+            <i class="fa-regular fa-id-badge"></i>
+          </span>
+          <span class="tooltip">
+            <a href="#">LinkedIn</a> <i class="fa-regular fa-id-badge"></i>
+          </span>
+          <span class="tooltip">
+            <a href="#">GitHub</a><i class="fa-brands fa-github-alt"></i>
+          </span>
+          <span class="tooltip">
+            <a href="#">Contact</a>
+            <i class="fa-regular fa-message"></i>
+          </span>
+        </div>
+
+        <i class="fa-solid fa-greater-than"></i>
       </div>
       <div class="row Copyright">
         <i class="fa-regular fa-copyright"></i> 2023 design by Yeika Robles |
