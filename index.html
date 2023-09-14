@@ -18,7 +18,10 @@
   </head>
   <body>
     <header>
-      <h1>Tululú</h1>
+      <div class="name">
+        <h1>Tululú</h1>
+        <span>// encrypter</span>
+      </div>
       <div class="logo">
         <img src="./img/IMG_1089 2.PNG" alt="logo" />
       </div>
@@ -47,7 +50,7 @@
                 <button>paste</button>
                 <button>clear</button>
               </div>
-              <button>encrypt</button>
+              <button class="mainBtn">encrypt</button>
             </div>
           </section>
 
@@ -72,32 +75,49 @@
       </div>
     </main>
     <footer>
-      <div class="row Social">
-        <i class="fa-solid fa-hashtag"></i>
-        <i class="fa-solid fa-less-than"></i>
+      <nav class="row social">
+        <ul class="socialLinks">
+          <li class="links">
+            <a href="#"
+              ><div>
+                <i class="fa-solid fa-user"></i>
+              </div>
+              Portfolio</a
+            >
+          </li>
 
-        <div class="socialLinks">
-          <span class="tooltip">
-            <a href="#">Portfolio</a>
-            <i class="fa-regular fa-id-badge"></i>
-          </span>
-          <span class="tooltip">
-            <a href="#">LinkedIn</a> <i class="fa-regular fa-id-badge"></i>
-          </span>
-          <span class="tooltip">
-            <a href="#">GitHub</a><i class="fa-brands fa-github-alt"></i>
-          </span>
-          <span class="tooltip">
-            <a href="#">Contact</a>
-            <i class="fa-regular fa-message"></i>
-          </span>
-        </div>
+          <li class="links">
+            <a href="#">
+              <div>
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+              LinkedIn</a
+            >
+          </li>
 
-        <i class="fa-solid fa-greater-than"></i>
-      </div>
-      <div class="row Copyright">
-        <i class="fa-regular fa-copyright"></i> 2023 design by Yeika Robles |
-        All rights reserved
+          <li class="links">
+            <a href="#">
+              <div>
+                <i class="fa-brands fa-github-alt"></i>
+              </div>
+              GitHub</a
+            >
+          </li>
+
+          <li class="links">
+            <a href="#">
+              <div>
+                <i class="fa-regular fa-message"></i>
+              </div>
+              Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <div class="row copyright">
+        <i class="fa-regular fa-copyright"></i> 2023 design by
+        <span>Yeika Robles</span> | All rights reserved
       </div>
     </footer>
   </body>

@@ -42,15 +42,28 @@ header {
   align-items: end;
   height: 7em;
   background-color: var(--Dark-shades);
-  margin-bottom: 7em;
+  margin-bottom: 10em;
 }
 
-header h1 {
+.name {
+  display: flex;
+  align-items: end;
+  gap: 2rem;
+}
+
+.name h1 {
   font-family: "Fredericka the Great", cursive;
   font-size: 60px;
   margin-left: 2rem;
   color: var(--Salmon-pink);
   text-shadow: 5px 5px 1px rgba(var(--Light-accent-rgb), 0.5);
+}
+
+.name span {
+  font-family: "Fredericka the Great", cursive;
+  font-size: 2rem;
+  color: var(--Leaf-color);
+  padding-bottom: 0.5rem;
 }
 
 .logo {
@@ -102,7 +115,6 @@ main {
   font-family: "Farsan";
   font-size: 1.2rem;
   text-transform: uppercase;
-  /* text-align: center; */
 }
 
 .container select:focus {
@@ -155,17 +167,14 @@ section textarea::placeholder {
 .wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .wrapper button {
-  background-color: var(--Light-accent);
-  color: var(--Light-shades);
-  border: none;
   border-radius: 0.5em;
-  padding: 1em 2em;
-  width: 100%;
   cursor: pointer;
+  font-family: "Patrick Hand SC", cursive;
+  text-transform: lowercase;
 }
 
 .btns {
@@ -177,11 +186,11 @@ section textarea::placeholder {
 .btns button {
   background: none;
   color: var(--Light-accent);
-  cursor: pointer;
+  border: 1px solid var(--Light-accent);
   padding: 0.5em 1.5em;
   margin: 0.5em 1.5em;
-  text-transform: capitalize;
-  border: 1px solid var(--Light-accent);
+  width: 50%;
+  font-size: 1.2rem;
 }
 
 .btns button:nth-child(2) {
@@ -189,12 +198,111 @@ section textarea::placeholder {
   border: 1px solid var(--Main-brand-color);
 }
 
+.mainBtn {
+  background-color: var(--Light-accent);
+  color: var(--Light-shades);
+  border: none;
+  padding: 0.4rem 5rem;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  margin: auto;
+}
+
+/* elementos del footer */
 footer {
   position: absolute;
   bottom: 0;
   background-color: var(--Dark-shades);
   width: 100%;
-  height: 7em;
+  height: 10em;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  margin: auto;
+  align-items: center;
+}
+
+.socialLinks {
+  display: flex;
+  list-style-type: none;
+  gap: 3rem;
+  height: 90%;
+}
+
+.socialLinks li {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.links i {
+  color: rgba(var(--Light-shades-rgb), 0.5);
+  font-size: 1.5rem;
+  background-color: rgba(var(--Light-accent-rgb), 0.5);
+  padding: 0.7rem;
+  /* border: 3px solid white; */
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.links:hover i {
+  scale: 0.8;
+  background-color: rgb(var(--Light-accent-rgb));
+  color: white;
+  cursor: pointer;
+}
+
+.links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(var(--Light-shades-rgb), 0.5);
+  font-family: "Patrick Hand SC", cursive;
+  font-size: 1.3rem;
+  text-transform: lowercase;
+  transition: 0.2s;
+}
+
+.links:hover a {
+  scale: 1.2;
+  color: var(--Salmon-pink);
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 50%;
+  bottom: -2.5px;
+  background-color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.links:hover a::after {
+  width: 100%;
+  left: 0;
+}
+
+/* row2 copyright */
+.copyright {
+  color: rgba(var(--Light-shades-rgb), 0.4);
+  font-family: "Farsan", cursive;
+  font-size: small;
+  letter-spacing: 0.1rem;
+  height: 5%;
+}
+
+.copyright i {
+  color: var(--Leaf-color);
+  margin: 0 0.3rem;
+}
+
+.copyright span {
+  margin: 0 0.3rem;
+  color: var(--Leaf-color);
 }
