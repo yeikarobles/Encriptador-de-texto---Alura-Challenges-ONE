@@ -29,8 +29,8 @@
     <main>
       <div class="container">
         <div class="title"><h1>.Encryption</h1></div>
-        <select name="function" id="selected">
-          <option hidden>Choose an action</option>
+        <select name="function" id="functionSelector">
+          <option value="null" hidden>Choose function</option>
           <option value="encrypt">Encrypt</option>
           <option value="decrypt">Decrypt</option>
         </select>
@@ -48,11 +48,11 @@
               ></textarea>
 
               <div class="btns">
-                <button>paste</button>
-                <button>clear</button>
+                <button id="pasteTextIn">paste</button>
+                <button id="clearTextIn">clear</button>
               </div>
 
-              <button class="mainBtn">encrypt</button>
+              <button class="mainBtn" id="mainBtn">encrypt</button>
             </div>
           </section>
 
@@ -68,8 +68,8 @@
               ></textarea>
 
               <div class="btns">
-                <button>copy</button>
-                <button>clear</button>
+                <button id="copyTextOut">copy</button>
+                <button id="clearTextOut">clear</button>
               </div>
             </div>
           </section>
@@ -128,5 +128,6 @@
 
       <div class="right"></div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

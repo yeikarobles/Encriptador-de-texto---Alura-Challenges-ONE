@@ -319,4 +319,36 @@ footer {
   color: var(--Leaf-color);
 }
 
+.mainBtn:disabled {
+  background-color: lightgray;
+}
 /* 3er div */
+/* 
+.right {
+  border: 1px solid red;
+  width: 50px;
+  height: 100%;
+  position: relative;
+}
+
+.right::before {
+  content: url(./img/kiqi-low-resolution-logo-white-on-transparent-background.png);
+
+  display: block;
+  height: 2rem;
+  width: 4rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+/* .right::after {
+  content: "";
+  background-image: url("./img/kiqi-low-resolution-logo-white-on-transparent-background.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+/* } */
