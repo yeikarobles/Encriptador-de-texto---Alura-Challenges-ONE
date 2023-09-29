@@ -1,40 +1,48 @@
 //variables
 const selected = document.getElementById("functionSelector");
-const txt = document.getElementById("textIn");
+const textIn = document.getElementById("textIn");
 const resultedText = document.getElementById("textOut");
+const pError = document.getElementById("error");
+
 //buttons
-const btnPrincipal = document.getElementById("mainBtn");
+const submitBtn = document.getElementById("submitBtn");
 const btnPasteTextIn = document.getElementById("pasteTextIn");
-const btnclearTextIn = document.getElementById("clearTextIn");
-const btncopyTextOut = document.getElementById("copyTextOut");
-const btnclearTextOut = document.getElementById("clearTextOut");
+const btnClearTextIn = document.getElementById("clearTextIn");
+const btnCopyTextOut = document.getElementById("copyTextOut");
+const btnClearTextOut = document.getElementById("clearTextOut");
 
 let state = null;
 
 selected.addEventListener("change", () => {
   if (selected.value === null) return;
   state = selected.value;
-  btnPrincipal.innerText = selected.value;
+  submitBtn.innerText = selected.value;
 });
 
-btnPrincipal.addEventListener("click", () => {
-  if (state) {
-    if (state == "encrypt") {
-      resultedText.value = encrypt(txt.value);
-      console.log("encriptando");
-      return;
-    }
-    if (state == "decrypt") {
-      resultedText.value = decrypt(txt.value);
-      console.log("desencriptando");
-      return;
-    }
+submitBtn.addEventListener("click", () => {
+  const error = validate(textIn.value);
+
+  if (error.status) {
+    pError.innerText = error.message;
+    return;
   }
 
-  console.log("nada");
+  pError.innerText = "";
+
+  if (state == "encrypt") {
+    resultedText.value = encrypt(textIn.value);
+    console.log("encriptando");
+    return;
+  }
+
+  if (state == "decrypt") {
+    resultedText.value = decrypt(textIn.value);
+    console.log("desencriptando");
+    return;
+  }
 });
 
-btncopyTextOut.addEventListener("click", () => {
+btnCopyTextOut.addEventListener("click", () => {
   copy();
   //mensaje copiado
   console.log("copiado con exito");
@@ -45,16 +53,18 @@ btnPasteTextIn.addEventListener("click", () => {
   console.log("pegado con exito");
 });
 
-btnclearTextIn.addEventListener("click", () => {
+btnClearTextIn.addEventListener("click", (event) => {
+  clear(event);
   console.log("eliminado con exito");
 });
 
-btnclearTextOut.addEventListener("click", () => {
-  console.log("eliminado con exito2");
+btnClearTextOut.addEventListener("click", (event) => {
+  clear(event);
+  console.log("funcion eliminar 2");
 });
 
-function encrypt(texto) {
-  return texto
+function encrypt(text) {
+  return text
     .replaceAll("e", "enter")
     .replaceAll("i", "imes")
     .replaceAll("a", "ai")
@@ -62,8 +72,8 @@ function encrypt(texto) {
     .replaceAll("u", "ufat");
 }
 
-function decrypt(texto) {
-  return texto
+function decrypt(text) {
+  return text
     .replaceAll("enter", "e")
     .replaceAll("imes", "i")
     .replaceAll("ai", "a")
@@ -71,14 +81,37 @@ function decrypt(texto) {
     .replaceAll("ufat", "u");
 }
 
+function paste() {
+  const textToPaste = navigator.clipboard.readText();
+  textToPaste.then((clipText) => (textIn.value += clipText));
+}
+
 function copy() {
   navigator.clipboard.writeText(resultedText.value);
   console.log("copiado con exito");
 }
 
-function paste() {
-  const textToPaste = navigator.clipboard.readText();
-  textToPaste.then((clipText) => (txt.value += clipText));
+function clear(event) {
+  let e = event.target.parentNode.firstChild;
+  console.log(e.nextSibling);
+  e.nextSibling.value = "";
 }
 
-function clear() {}
+function validate(text) {
+  //validate
+  if (!state) {
+    return {
+      status: true,
+      message: "select a function",
+    };
+  }
+
+  if (/^[a-z\s]+$/g.test(text)) {
+    return { status: false, message: "" };
+  }
+
+  return {
+    status: true,
+    message: "no special characters, uppercase or numbers",
+  };
+}
